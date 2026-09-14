@@ -1,0 +1,17 @@
+# GitHub Pages — served from /docs on main.
+# Enable under Settings → Pages → Source: "Deploy from a branch", branch main, folder /docs.
+title: AI Systems Engineering
+description: A master's course on building reliable systems out of stochastic, drifting, action-taking components.
+theme: jekyll-theme-cayman
+show_downloads: false
+markdown: kramdown
+plugins:
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
+relative_links:
+  enabled: true
+  collections: false
+exclude:
+  - _build
