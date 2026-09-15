@@ -1,11 +1,5 @@
 # AI Systems Engineering
-### University of St. Thomas — Fall 2026 (Draft v3)
-
-> **Draft status.** v3 restructures assessment around four cumulative pair projects on a
-> shared scaffold, caps outside-class work at 5 hours/week, and fixes the infrastructure
-> to what an AWS Academy Learner Lab budget and the Gemini free tier can carry. Project specs, the
-> scaffold, and budgets are in `projects.md`. Exam design is a placeholder (see Week 8
-> and Week 14). Semester dates and grading boundaries are placeholders.
+### University of St. Thomas — Fall 2026
 
 ---
 
