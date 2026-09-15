@@ -9,7 +9,7 @@ layout: default
 fourteen weeks, built for working professionals. This page describes the course as it
 is designed. Semester-specific material lives in a separate repository each term.
 
-**Current offering:** [Fall 2026](https://github.com/aise-stthomas/f2026)
+**Current offering:** [Fall 2026 course guide](https://aise-stthomas.github.io/f2026/) · [repository](https://github.com/aise-stthomas/f2026)
 
 ---
 
