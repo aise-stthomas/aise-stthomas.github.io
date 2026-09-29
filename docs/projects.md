@@ -160,33 +160,51 @@ target, a quota budget, and the rubric emphasis. Pairs. Repositories are tagged 
 deadline.
 
 ### P1 — Measure it
-**Assigned Week 2 · Due Week 4 · ~12 hours · Weight 10%**
+**Assigned Week 2 · Due Week 4 · Weight 10%**
 
-*The scaffold "works." Prove it, per slice, with a noise floor — and say what you cannot see.*
+*The triage step "works." Prove it, per slice, with a noise floor — and say what you cannot see.*
 
-**You replace:** the eval harness stub.
+**The system under test** is one model call, not the agent: the `triage()` step from the
+*feel the distribution* lab, frozen in the project's template repository
+([measure-it](https://github.com/aise-stthomas/measure-it)), with the model, temperature,
+and prompt pinned. The scaffold arrives with the next project, and the harness ports to
+it unchanged.
+
+**You replace:** the lab's ten-ticket harness stub.
 
 **Deliver:**
-1. A **golden set** of 50–100 tickets with expected resolutions, sourced from the
-   simulator plus hand-authored adversarial and edge items. Coverage mapped to the
-   Week 2 mitigation table.
-2. **Slices**: at minimum by intent, by amount band, by whether the ticket contains an
-   instruction to the agent, and one slice of your choosing that you expect to fail.
-3. **Scorers** appropriate to each output type: exact match for the action taken;
-   a rubric-based judge for resolution text.
-4. **A validated judge**: agreement with your own human labels on ≥30 items, reported
-   per slice; the judge's failure modes you found.
-5. **The noise floor**: the same system run 5× on the suite; report the spread and the
-   effect size you can detect.
-6. **The blind-spot register**: what this harness cannot see. Written, honest, short.
-7. **Design doc (1 page):** the seven-step brief for the Operator — you have the
-   vocabulary from Weeks 1–3.
+1. A **golden set** of 50–80 tickets you write, each with the outcome the policy
+   requires and the policy sentence that makes it so; disputed items tagged
+   `ambiguous`, not forced.
+2. **Slices**: at minimum by intent, by amount relative to the caps, by whether the
+   ticket contains text addressed to the model, and one slice of your choosing that you
+   expect to fail. Every number reported per slice, as counts.
+3. **Scorers** appropriate to each output type: exact match for the action; a rule for
+   the amount; malformed counted as failure; a rubric-based model judge for the
+   rationale (does it agree with the action taken; does it state the policy correctly).
+4. **A validated judge**: agreement with your own blind human labels on 30 items,
+   reported per slice as counts; the judge's failure modes you found.
+5. **The noise floor**: the unchanged system run 5× on the suite; per-slice spread; the
+   smallest change you could detect.
+6. **One question answered with the harness**: the policy sent as the system
+   instruction instead of beside the ticket, 5 runs. Per slice: helped, hurt, or cannot
+   tell.
+7. **The blind-spot register**: what this harness cannot see. Written, honest, short.
+8. **Requirements brief (1 page):** steps 1–2 of the seven-step framework for the triage
+   step — the decision, whether it should be a model, and three to five requirements as
+   rate × slice × remainder policy × owner, with the measured numbers beside them.
 
-**Quota budget:** ~700 live calls (100 items × 5 runs + judging), recorded as fixtures.
-Fits one day of a single key; two keys make it comfortable.
+The spec includes short recipes for judge validation and the noise floor, because the
+evaluation lectures come after P1 is due.
+
+**Quota budget:** ~800 live calls (60 items × 5 runs × 2 conditions + judging), recorded
+as fixtures and spread over days; the free tier's daily cap per model is not published.
 
 **Rubric emphasis:** slices that expose what the aggregate hides; a judge you validated
-rather than trusted; an honest blind-spot register. Coverage over size.
+rather than trusted; a conclusion the noise floor supports; an honest blind-spot
+register. Coverage over size.
+
+Full specification: `PROJECT.md` in the measure-it repository.
 
 ---
 
