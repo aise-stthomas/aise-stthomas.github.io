@@ -209,7 +209,7 @@ Full specification: `PROJECT.md` in the measure-it repository.
 ---
 
 ### P2 — Ship it
-**Assigned Week 4 · Due Week 7 · ~12 hours · Weight 10%**
+**Assigned Week 5 · Due Week 7 · ~12 hours · Weight 10%**
 
 *A change to the prompt is a deploy. Prove that no deploy regresses beyond the noise floor,
 and that you can turn it off.*
