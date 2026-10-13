@@ -209,36 +209,19 @@ Full specification: `PROJECT.md` in the measure-it repository.
 ---
 
 ### P2 — Ship it
-**Assigned Week 5 · Due Week 7 · ~12 hours · Weight 10%**
+**Assigned Week 5 · Due Week 7 · Weight 10%**
 
-*A change to the prompt is a deploy. Prove that no deploy regresses beyond the noise floor,
-and that you can turn it off.*
+*Stand up the triage service behind a public API, write every inference to a DynamoDB
+table, and run your evaluation harness against the live service on three datasets.*
 
-**You replace:** the deployment's release path and the trace logger.
+The specification and the datasets are in the project repository,
+[aise-stthomas/ship-it](https://github.com/aise-stthomas/ship-it). There is no starter
+code: the pieces are the *publish the API* lab and your P1 harness.
 
-**Deliver:**
-1. **A release gate in CI**: the P1 harness runs on **replay fixtures** on every change,
-   plus a **live smoke suite** of ~10 items. The gate fails when any slice regresses
-   beyond the noise floor at your stated confidence. Show one deliberately bad prompt
-   change being blocked.
-2. **A canary**: a weighted split between two versions of the build — prompt, model
-   identifier, corpus snapshot — with a **kill switch** that reverts in one action.
-   Show it working.
-3. **A build manifest**: the six components of "the build" pinned in one file; the
-   rollback procedure names a combination, not a commit.
-4. **Telemetry**: the trace logger now captures the **context at each step** (or a
-   reference to it), the parse, the dispatch, the result, cost, latency, and model
-   version, with a join key per run. Redaction policy stated.
-5. **A cost model**: cost per resolution at 1M tickets/month under three model-routing
-   choices; the dominant term identified.
-6. **Design doc (1 page):** the rollout design — what you watch during a canary, what
-   triggers the kill switch, what "rollback" rolls back to.
-
-**Quota budget:** the gate runs on fixtures; the live smoke suite is ~10 calls per push.
-Budget ~200 live calls for the canary demonstration.
-
-**Rubric emphasis:** the gate actually blocks a regression; the kill switch is one
-action; the manifest names everything in the build.
+**Deliver:** a repository runnable from a clean clone · a public URL with a build
+identifier on every response · every inference in a DynamoDB table, and a script that
+reads it · the harness run on the three datasets against the live URL, scored per slice
+from the table · a two-page write-up.
 
 ---
 
